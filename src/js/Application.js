@@ -13,14 +13,16 @@ export default class Application extends EventEmitter {
     this.emit(Application.events.READY);
   }
   init() {
-     document.body.getElementsByClassName("article").addEventListener("click", () => { anime({
-      targets: '.article',
+    const art = document.querySelector(".article");
+    const f = () => { anime({
+      targets: art,
       translateX: 250,
       direction: 'alternate',
       loop: true,
       easing: 'spring(1, 80, 10, 0)'
-    })} 
-     )
+    })}
+
+     art.addEventListener("click", f)
     
    
     
