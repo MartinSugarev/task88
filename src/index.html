@@ -16,44 +16,5 @@
           <p>Animating</p>
         </div>
       </article>
-      <script src="anime.min.js"></script>
-    <script>
-
-
-
-  class Application {
-  static get events() {
-    return {
-      READY: "ready",
-    };
-  }
-
-  constructor() {
-    
-    this.init();
-   this.emit(Application.events.READY);
-  }
-  init() {
-     document.body.getElementsByClassName("article").addEventListener("click", anime({
-      targets: '.article',
-      translateX: 250,
-      direction: 'alternate',
-      loop: true,
-      easing: 'linear'
-    })
-     )
-    
-     window.addEventListener("DOMContentLoaded", () => {
-  // This block will be executed once the page is loaded and ready
-  const app = new Application();
-  // Used to access the app instance by the automated tests
-  app.init()
-  window.__JS_APP = app;
-});
-
-    
-  }
-}
-    </script>
   </body>
 </html>
